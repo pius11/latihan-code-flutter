@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:food_go/data.dart';
 import 'package:food_go/detail.dart';
@@ -7,13 +5,19 @@ import 'package:food_go/detail.dart';
 class Food extends StatelessWidget {
   final String title; // Parameter untuk menerima nama kategori
   final int idCategory; // Parameter untuk menerima id kategori
-  Food({required this.title, required this.idCategory}); // Konstruktor dengan parameter
-  
+  Food({
+    required this.title,
+    required this.idCategory,
+  }); // Konstruktor dengan parameter
+
   @override
   Widget build(BuildContext context) {
     //melakukan filter
-    final filteredProduck = Data().food.where((produck) => produck['category'] == idCategory).toList();
-    
+    final filteredProduck =
+        Data().food
+            .where((produck) => produck['category'] == idCategory)
+            .toList();
+
     return Scaffold(
       appBar: AppBar(
         title: Text(title), // Gunakan parameter title untuk judul AppBar
@@ -22,9 +26,8 @@ class Food extends StatelessWidget {
       ),
       backgroundColor: Colors.white,
       body: ListView.builder(
-        itemCount: filteredProduck .length, // Menggunakan panjang data makanan
+        itemCount: filteredProduck.length, // Menggunakan panjang data makanan
         itemBuilder: (context, index) {
-
           final produckItem = filteredProduck[index];
 
           return Container(
@@ -49,25 +52,27 @@ class Food extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                
-  
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => Detail(title: produckItem['name'],idFood: produckItem['id'], category: produckItem['category'],)),
-                
+                  MaterialPageRoute(
+                    builder:
+                        (context) => Detail(
+                          title: produckItem['name'],
+                          idFood: produckItem['id'],
+                          category: produckItem['category'],
+                        ),
+                  ),
                 );
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Image.asset(
-                    produckItem['image'],
-                    width: 50,
-                    height: 50,
-                  ),
+                  Image.asset(produckItem['image'], width: 50, height: 50),
                   Text(produckItem['name'], style: TextStyle(fontSize: 20)),
-                  Text("Rp. "${produckItem['price']}", style: TextStyle(fontSize: 20)),
-                  
+                  Text(
+                    "Rp. " + produckItem['price'],
+                    style: TextStyle(fontSize: 20),
+                  ),
                 ],
               ),
             ),
