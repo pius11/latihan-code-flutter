@@ -70,7 +70,7 @@ class Food extends StatelessWidget {
                   Image.asset(produckItem['image'], width: 50, height: 50),
                   Text(produckItem['name'], style: TextStyle(fontSize: 20)),
                   Text(
-                    "Rp. " + produckItem['price'],
+                    "Rp. " + produckItem['price'].toString(),
                     style: TextStyle(fontSize: 20),
                   ),
                 ],
