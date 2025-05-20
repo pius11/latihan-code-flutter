@@ -87,10 +87,7 @@ class _DetailState extends State<Detail> {
                       margin: EdgeInsets.fromLTRB(10, 10, 10, 10),
                       child: Text(
                         foodItem['deskripsi'],
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: TextStyle(fontSize: 18),
                       ),
                     ),
                   ],
@@ -166,7 +163,9 @@ class _DetailState extends State<Detail> {
                       onPressed: () {
                         // Tambahkan logika untuk tombol pesan di sini
                         print(
-                          "Pesanan dibuat dengan qty: $qty dan total harga: Rp. ${totalPrice.toStringAsFixed(0)}",
+                          "Pesanan " +
+                              foodItem['name'] +
+                              " sudah dibuat dengan qty: $qty dan total harga: Rp. ${totalPrice.toStringAsFixed(0)}",
                         );
                         Navigator.push(
                           context,

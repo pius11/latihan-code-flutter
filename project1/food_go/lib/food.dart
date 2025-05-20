@@ -66,7 +66,7 @@ class Food extends StatelessWidget {
                     height: 50,
                   ),
                   Text(produckItem['name'], style: TextStyle(fontSize: 20)),
-                  Text("Rp. ${produckItem['price']}", style: TextStyle(fontSize: 20)),
+                  Text("Rp. "${produckItem['price']}", style: TextStyle(fontSize: 20)),
                   
                 ],
               ),
