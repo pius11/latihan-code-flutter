@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:latihan_user_interface/home.dart';
 import 'package:latihan_user_interface/home_buttonPadding.dart';
 import 'package:latihan_user_interface/home_icon.dart';
+import 'package:latihan_user_interface/modulForm/form1.dart';
+import 'package:latihan_user_interface/modulForm/form2.dart';
 import 'package:latihan_user_interface/modulGambar/gambar.dart';
+import 'package:latihan_user_interface/modulnav/navigationButtom.dart';
+import 'package:latihan_user_interface/modulnav/navigatorDrawerr.dart';
 import 'package:latihan_user_interface/ui2/home_column.dart';
 import 'package:latihan_user_interface/ui2/row_size_box.dart';
 import 'package:latihan_user_interface/ui2/single_child_scroll_view.dart';
@@ -27,7 +31,7 @@ class MyApp extends StatelessWidget {
    
    return MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: Gambar(),
+    home: Form2(),
    );
   }
-}
+} 
